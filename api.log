@@ -1,0 +1,585 @@
+kinochilar_api  | INFO:     Will watch for changes in these directories: ['/app']
+kinochilar_api  | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+kinochilar_api  | INFO:     Started reloader process [1] using WatchFiles
+kinochilar_api  | INFO:     Started server process [16]
+kinochilar_api  | INFO:     Waiting for application startup.
+kinochilar_api  | 2026-06-07 11:54:59,632 INFO sqlalchemy.engine.Engine select pg_catalog.version()
+kinochilar_api  | 2026-06-07 11:54:59,633 INFO sqlalchemy.engine.Engine [raw sql] ()
+kinochilar_api  | 2026-06-07 11:54:59,635 INFO sqlalchemy.engine.Engine select current_schema()
+kinochilar_api  | 2026-06-07 11:54:59,635 INFO sqlalchemy.engine.Engine [raw sql] ()
+kinochilar_api  | 2026-06-07 11:54:59,636 INFO sqlalchemy.engine.Engine show standard_conforming_strings
+kinochilar_api  | 2026-06-07 11:54:59,636 INFO sqlalchemy.engine.Engine [raw sql] ()
+kinochilar_api  | 2026-06-07 11:54:59,638 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+kinochilar_api  | 2026-06-07 11:54:59,643 INFO sqlalchemy.engine.Engine SELECT pg_catalog.pg_class.relname 
+kinochilar_api  | FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+kinochilar_api  | WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+kinochilar_api  | 2026-06-07 11:54:59,643 INFO sqlalchemy.engine.Engine [generated in 0.00025s] ('user', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+kinochilar_api  | 2026-06-07 11:54:59,652 INFO sqlalchemy.engine.Engine SELECT pg_catalog.pg_class.relname 
+kinochilar_api  | FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+kinochilar_api  | WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+kinochilar_api  | 2026-06-07 11:54:59,652 INFO sqlalchemy.engine.Engine [cached since 0.00879s ago] ('movie_genre', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+kinochilar_api  | 2026-06-07 11:54:59,653 INFO sqlalchemy.engine.Engine SELECT pg_catalog.pg_class.relname 
+kinochilar_api  | FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+kinochilar_api  | WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+kinochilar_api  | 2026-06-07 11:54:59,653 INFO sqlalchemy.engine.Engine [cached since 0.0101s ago] ('movie_credits', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+kinochilar_api  | 2026-06-07 11:54:59,655 INFO sqlalchemy.engine.Engine SELECT pg_catalog.pg_class.relname 
+kinochilar_api  | FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+kinochilar_api  | WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+kinochilar_api  | 2026-06-07 11:54:59,655 INFO sqlalchemy.engine.Engine [cached since 0.01159s ago] ('movie_tag', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+kinochilar_api  | 2026-06-07 11:54:59,656 INFO sqlalchemy.engine.Engine SELECT pg_catalog.pg_class.relname 
+kinochilar_api  | FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+kinochilar_api  | WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+kinochilar_api  | 2026-06-07 11:54:59,656 INFO sqlalchemy.engine.Engine [cached since 0.01299s ago] ('tag', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+kinochilar_api  | 2026-06-07 11:54:59,657 INFO sqlalchemy.engine.Engine SELECT pg_catalog.pg_class.relname 
+kinochilar_api  | FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+kinochilar_api  | WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+kinochilar_api  | 2026-06-07 11:54:59,658 INFO sqlalchemy.engine.Engine [cached since 0.01434s ago] ('person', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+kinochilar_api  | 2026-06-07 11:54:59,659 INFO sqlalchemy.engine.Engine SELECT pg_catalog.pg_class.relname 
+kinochilar_api  | FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+kinochilar_api  | WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+kinochilar_api  | 2026-06-07 11:54:59,659 INFO sqlalchemy.engine.Engine [cached since 0.0157s ago] ('genre', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+kinochilar_api  | 2026-06-07 11:54:59,660 INFO sqlalchemy.engine.Engine SELECT pg_catalog.pg_class.relname 
+kinochilar_api  | FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+kinochilar_api  | WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+kinochilar_api  | 2026-06-07 11:54:59,660 INFO sqlalchemy.engine.Engine [cached since 0.01652s ago] ('movie', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+kinochilar_api  | 2026-06-07 11:54:59,660 INFO sqlalchemy.engine.Engine SELECT pg_catalog.pg_class.relname 
+kinochilar_api  | FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+kinochilar_api  | WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+kinochilar_api  | 2026-06-07 11:54:59,661 INFO sqlalchemy.engine.Engine [cached since 0.01729s ago] ('episode', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+kinochilar_api  | 2026-06-07 11:54:59,661 INFO sqlalchemy.engine.Engine SELECT pg_catalog.pg_class.relname 
+kinochilar_api  | FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+kinochilar_api  | WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+kinochilar_api  | 2026-06-07 11:54:59,661 INFO sqlalchemy.engine.Engine [cached since 0.01802s ago] ('collection_movie', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+kinochilar_api  | 2026-06-07 11:54:59,662 INFO sqlalchemy.engine.Engine SELECT pg_catalog.pg_class.relname 
+kinochilar_api  | FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+kinochilar_api  | WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+kinochilar_api  | 2026-06-07 11:54:59,662 INFO sqlalchemy.engine.Engine [cached since 0.0187s ago] ('review', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+kinochilar_api  | 2026-06-07 11:54:59,663 INFO sqlalchemy.engine.Engine SELECT pg_catalog.pg_class.relname 
+kinochilar_api  | FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+kinochilar_api  | WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+kinochilar_api  | 2026-06-07 11:54:59,663 INFO sqlalchemy.engine.Engine [cached since 0.01938s ago] ('favorite', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+kinochilar_api  | 2026-06-07 11:54:59,663 INFO sqlalchemy.engine.Engine SELECT pg_catalog.pg_class.relname 
+kinochilar_api  | FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+kinochilar_api  | WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+kinochilar_api  | 2026-06-07 11:54:59,663 INFO sqlalchemy.engine.Engine [cached since 0.02009s ago] ('usercollection', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+kinochilar_api  | 2026-06-07 11:54:59,664 INFO sqlalchemy.engine.Engine SELECT pg_catalog.pg_class.relname 
+kinochilar_api  | FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+kinochilar_api  | WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+kinochilar_api  | 2026-06-07 11:54:59,664 INFO sqlalchemy.engine.Engine [cached since 0.0208s ago] ('watchlist', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+kinochilar_api  | 2026-06-07 11:54:59,665 INFO sqlalchemy.engine.Engine SELECT pg_catalog.pg_class.relname 
+kinochilar_api  | FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+kinochilar_api  | WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+kinochilar_api  | 2026-06-07 11:54:59,665 INFO sqlalchemy.engine.Engine [cached since 0.0215s ago] ('history', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+kinochilar_api  | 2026-06-07 11:54:59,665 INFO sqlalchemy.engine.Engine SELECT pg_catalog.pg_class.relname 
+kinochilar_api  | FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+kinochilar_api  | WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+kinochilar_api  | 2026-06-07 11:54:59,665 INFO sqlalchemy.engine.Engine [cached since 0.02218s ago] ('ad', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+kinochilar_api  | 2026-06-07 11:54:59,666 INFO sqlalchemy.engine.Engine SELECT pg_catalog.pg_class.relname 
+kinochilar_api  | FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+kinochilar_api  | WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+kinochilar_api  | 2026-06-07 11:54:59,666 INFO sqlalchemy.engine.Engine [cached since 0.02281s ago] ('visitlog', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+kinochilar_api  | 2026-06-07 11:54:59,667 INFO sqlalchemy.engine.Engine SELECT pg_catalog.pg_class.relname 
+kinochilar_api  | FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+kinochilar_api  | WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+kinochilar_api  | 2026-06-07 11:54:59,667 INFO sqlalchemy.engine.Engine [cached since 0.02339s ago] ('notification', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+kinochilar_api  | 2026-06-07 11:54:59,667 INFO sqlalchemy.engine.Engine SELECT pg_catalog.pg_class.relname 
+kinochilar_api  | FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+kinochilar_api  | WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+kinochilar_api  | 2026-06-07 11:54:59,667 INFO sqlalchemy.engine.Engine [cached since 0.02414s ago] ('ailog', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+kinochilar_api  | 2026-06-07 11:54:59,668 INFO sqlalchemy.engine.Engine SELECT pg_catalog.pg_class.relname 
+kinochilar_api  | FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+kinochilar_api  | WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+kinochilar_api  | 2026-06-07 11:54:59,668 INFO sqlalchemy.engine.Engine [cached since 0.02517s ago] ('aistat', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+kinochilar_api  | 2026-06-07 11:54:59,669 INFO sqlalchemy.engine.Engine COMMIT
+kinochilar_api  | INFO:     Application startup complete.
+kinochilar_api  | 2026-06-07 11:56:27,671 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+kinochilar_api  | 2026-06-07 11:56:27,699 INFO sqlalchemy.engine.Engine SELECT "user".id, "user".full_name, "user".email, "user".hashed_password, "user".is_active, "user".is_superuser, "user".created_at, "user".updated_at 
+kinochilar_api  | FROM "user" 
+kinochilar_api  | WHERE "user".email = $1::VARCHAR
+kinochilar_api  | 2026-06-07 11:56:27,699 INFO sqlalchemy.engine.Engine [generated in 0.00021s] ('vosejonova@gmail.com',)
+kinochilar_api  | INFO:     172.21.0.1:43088 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+kinochilar_api  | 2026-06-07 11:56:27,713 INFO sqlalchemy.engine.Engine COMMIT
+kinochilar_api  | 2026-06-07 11:56:27,719 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+kinochilar_api  | 2026-06-07 11:56:27,721 INFO sqlalchemy.engine.Engine INSERT INTO visitlog (user_id, ip_address, user_agent, page_url) VALUES ($1::INTEGER, $2::VARCHAR, $3::VARCHAR, $4::VARCHAR) RETURNING visitlog.id, visitlog.created_at
+kinochilar_api  | 2026-06-07 11:56:27,722 INFO sqlalchemy.engine.Engine [generated in 0.00023s] (None, '172.21.0.1', 'python-httpx/0.28.1', 'http://localhost:8085/api/v1/discovery/home')
+kinochilar_api  | 2026-06-07 11:56:27,724 INFO sqlalchemy.engine.Engine COMMIT
+kinochilar_api  | 2026-06-07 11:56:27,727 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+kinochilar_api  | 2026-06-07 11:56:27,735 INFO sqlalchemy.engine.Engine SELECT movie.id, movie.code, movie.title_uz, movie.title_ru, movie.original_title, movie.description_uz, movie.description_ru, movie.release_date, movie.duration, movie.rating, movie.vote_count, movie.poster_path, movie.backdrop_path, movie.trailer_url, movie.video_url, movie.video_type, movie.is_premium, movie.is_series, movie.views, movie.created_at 
+kinochilar_api  | FROM movie ORDER BY movie.views DESC 
+kinochilar_api  |  LIMIT $1::INTEGER
+kinochilar_api  | 2026-06-07 11:56:27,735 INFO sqlalchemy.engine.Engine [generated in 0.00020s] (10,)
+kinochilar_api  | 2026-06-07 11:56:27,741 INFO sqlalchemy.engine.Engine SELECT movie.id, movie.code, movie.title_uz, movie.title_ru, movie.original_title, movie.description_uz, movie.description_ru, movie.release_date, movie.duration, movie.rating, movie.vote_count, movie.poster_path, movie.backdrop_path, movie.trailer_url, movie.video_url, movie.video_type, movie.is_premium, movie.is_series, movie.views, movie.created_at 
+kinochilar_api  | FROM movie ORDER BY movie.rating DESC 
+kinochilar_api  |  LIMIT $1::INTEGER
+kinochilar_api  | 2026-06-07 11:56:27,741 INFO sqlalchemy.engine.Engine [generated in 0.00027s] (10,)
+kinochilar_api  | 2026-06-07 11:56:27,747 INFO sqlalchemy.engine.Engine SELECT ad.id, ad.title_uz, ad.title_ru, ad.image_url, ad.link_url, ad.is_active, ad.target_movie_id, ad.views, ad.clicks, ad.created_at 
+kinochilar_api  | FROM ad 
+kinochilar_api  | WHERE ad.is_active = true 
+kinochilar_api  |  LIMIT $1::INTEGER
+kinochilar_api  | 2026-06-07 11:56:27,747 INFO sqlalchemy.engine.Engine [generated in 0.00027s] (5,)
+kinochilar_api  | 2026-06-07 11:56:27,751 INFO sqlalchemy.engine.Engine SELECT genre.id, genre.name_uz, genre.name_ru 
+kinochilar_api  | FROM genre 
+kinochilar_api  |  LIMIT $1::INTEGER
+kinochilar_api  | 2026-06-07 11:56:27,751 INFO sqlalchemy.engine.Engine [generated in 0.00028s] (20,)
+kinochilar_api  | 2026-06-07 11:56:27,755 INFO sqlalchemy.engine.Engine ROLLBACK
+kinochilar_api  | INFO:     172.21.0.1:43088 - "GET /api/v1/discovery/home HTTP/1.1" 500 Internal Server Error
+kinochilar_api  | ERROR:    Exception in ASGI application
+kinochilar_api  | Traceback (most recent call last):
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/protocols/http/httptools_impl.py", line 421, in run_asgi
+kinochilar_api  |     result = await app(  # type: ignore[func-returns-value]
+kinochilar_api  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/middleware/proxy_headers.py", line 62, in __call__
+kinochilar_api  |     return await self.app(scope, receive, send)
+kinochilar_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/fastapi/applications.py", line 1159, in __call__
+kinochilar_api  |     await super().__call__(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/applications.py", line 90, in __call__
+kinochilar_api  |     await self.middleware_stack(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/middleware/errors.py", line 186, in __call__
+kinochilar_api  |     raise exc
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/middleware/errors.py", line 164, in __call__
+kinochilar_api  |     await self.app(scope, receive, _send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/middleware/cors.py", line 88, in __call__
+kinochilar_api  |     await self.app(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+kinochilar_api  |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+kinochilar_api  |     raise exc
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+kinochilar_api  |     await app(scope, receive, sender)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+kinochilar_api  |     await self.app(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/routing.py", line 660, in __call__
+kinochilar_api  |     await self.middleware_stack(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/routing.py", line 680, in app
+kinochilar_api  |     await route.handle(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/routing.py", line 276, in handle
+kinochilar_api  |     await self.app(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/fastapi/routing.py", line 134, in app
+kinochilar_api  |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+kinochilar_api  |     raise exc
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+kinochilar_api  |     await app(scope, receive, sender)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+kinochilar_api  |     response = await f(request)
+kinochilar_api  |                ^^^^^^^^^^^^^^^^
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/fastapi/routing.py", line 695, in app
+kinochilar_api  |     content = await serialize_response(
+kinochilar_api  |               ^^^^^^^^^^^^^^^^^^^^^^^^^
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/fastapi/routing.py", line 306, in serialize_response
+kinochilar_api  |     return serializer(
+kinochilar_api  |            ^^^^^^^^^^^
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/fastapi/_compat/v2.py", line 231, in serialize_json
+kinochilar_api  |     return self._type_adapter.dump_json(
+kinochilar_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/pydantic/type_adapter.py", line 677, in dump_json
+kinochilar_api  |     return self.serializer.to_json(
+kinochilar_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^
+kinochilar_api  | pydantic_core._pydantic_core.PydanticSerializationError: Unable to serialize unknown type: <class 'app.models.movie.Genre'>
+kinochilar_api  | 2026-06-07 11:56:27,771 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+kinochilar_api  | 2026-06-07 11:56:27,772 INFO sqlalchemy.engine.Engine SELECT "user".id, "user".full_name, "user".email, "user".hashed_password, "user".is_active, "user".is_superuser, "user".created_at, "user".updated_at 
+kinochilar_api  | FROM "user" 
+kinochilar_api  | WHERE "user".id = $1::INTEGER
+kinochilar_api  | 2026-06-07 11:56:27,772 INFO sqlalchemy.engine.Engine [generated in 0.00014s] (1,)
+kinochilar_api  | 2026-06-07 11:56:27,776 INFO sqlalchemy.engine.Engine SELECT movie.id AS movie_id, movie.code AS movie_code, movie.title_uz AS movie_title_uz, movie.title_ru AS movie_title_ru, movie.original_title AS movie_original_title, movie.description_uz AS movie_description_uz, movie.description_ru AS movie_description_ru, movie.release_date AS movie_release_date, movie.duration AS movie_duration, movie.rating AS movie_rating, movie.vote_count AS movie_vote_count, movie.poster_path AS movie_poster_path, movie.backdrop_path AS movie_backdrop_path, movie.trailer_url AS movie_trailer_url, movie.video_url AS movie_video_url, movie.video_type AS movie_video_type, movie.is_premium AS movie_is_premium, movie.is_series AS movie_is_series, movie.views AS movie_views, movie.created_at AS movie_created_at 
+kinochilar_api  | FROM movie 
+kinochilar_api  | WHERE movie.id = $1::INTEGER
+kinochilar_api  | 2026-06-07 11:56:27,776 INFO sqlalchemy.engine.Engine [generated in 0.00012s] (1,)
+kinochilar_api  | 2026-06-07 11:56:27,778 INFO sqlalchemy.engine.Engine ROLLBACK
+kinochilar_api  | INFO:     172.21.0.1:43090 - "POST /api/v1/comments/movie/1 HTTP/1.1" 404 Not Found
+kinochilar_api  | 2026-06-07 11:56:27,783 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+kinochilar_api  | 2026-06-07 11:56:27,783 INFO sqlalchemy.engine.Engine SELECT "user".id, "user".full_name, "user".email, "user".hashed_password, "user".is_active, "user".is_superuser, "user".created_at, "user".updated_at 
+kinochilar_api  | FROM "user" 
+kinochilar_api  | WHERE "user".id = $1::INTEGER
+kinochilar_api  | 2026-06-07 11:56:27,783 INFO sqlalchemy.engine.Engine [cached since 0.01124s ago] (1,)
+kinochilar_api  | 2026-06-07 11:56:27,786 INFO sqlalchemy.engine.Engine SELECT movie.id AS movie_id, movie.code AS movie_code, movie.title_uz AS movie_title_uz, movie.title_ru AS movie_title_ru, movie.original_title AS movie_original_title, movie.description_uz AS movie_description_uz, movie.description_ru AS movie_description_ru, movie.release_date AS movie_release_date, movie.duration AS movie_duration, movie.rating AS movie_rating, movie.vote_count AS movie_vote_count, movie.poster_path AS movie_poster_path, movie.backdrop_path AS movie_backdrop_path, movie.trailer_url AS movie_trailer_url, movie.video_url AS movie_video_url, movie.video_type AS movie_video_type, movie.is_premium AS movie_is_premium, movie.is_series AS movie_is_series, movie.views AS movie_views, movie.created_at AS movie_created_at 
+kinochilar_api  | FROM movie 
+kinochilar_api  | WHERE movie.id = $1::INTEGER
+kinochilar_api  | 2026-06-07 11:56:27,786 INFO sqlalchemy.engine.Engine [cached since 0.01001s ago] (1,)
+kinochilar_api  | 2026-06-07 11:56:27,788 INFO sqlalchemy.engine.Engine ROLLBACK
+kinochilar_api  | INFO:     172.21.0.1:43090 - "POST /api/v1/comments/movie/1 HTTP/1.1" 404 Not Found
+kinochilar_api  | 2026-06-07 11:56:27,793 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+kinochilar_api  | 2026-06-07 11:56:27,793 INFO sqlalchemy.engine.Engine SELECT "user".id, "user".full_name, "user".email, "user".hashed_password, "user".is_active, "user".is_superuser, "user".created_at, "user".updated_at 
+kinochilar_api  | FROM "user" 
+kinochilar_api  | WHERE "user".id = $1::INTEGER
+kinochilar_api  | 2026-06-07 11:56:27,794 INFO sqlalchemy.engine.Engine [cached since 0.02143s ago] (1,)
+kinochilar_api  | TMDB API error: 401 - {"status_code":7,"status_message":"Invalid API key: You must be granted a valid key.","success":false}
+kinochilar_api  | 
+kinochilar_api  | 2026-06-07 11:56:28,367 INFO sqlalchemy.engine.Engine SELECT movie.id, movie.code, movie.title_uz, movie.title_ru, movie.original_title, movie.description_uz, movie.description_ru, movie.release_date, movie.duration, movie.rating, movie.vote_count, movie.poster_path, movie.backdrop_path, movie.trailer_url, movie.video_url, movie.video_type, movie.is_premium, movie.is_series, movie.views, movie.created_at 
+kinochilar_api  | FROM movie 
+kinochilar_api  | WHERE movie.description_uz IS NULL 
+kinochilar_api  |  LIMIT $1::INTEGER
+kinochilar_api  | 2026-06-07 11:56:28,367 INFO sqlalchemy.engine.Engine [generated in 0.00012s] (5,)
+kinochilar_api  | 2026-06-07 11:56:28,371 INFO sqlalchemy.engine.Engine SELECT movie.id, movie.code, movie.title_uz, movie.title_ru, movie.original_title, movie.description_uz, movie.description_ru, movie.release_date, movie.duration, movie.rating, movie.vote_count, movie.poster_path, movie.backdrop_path, movie.trailer_url, movie.video_url, movie.video_type, movie.is_premium, movie.is_series, movie.views, movie.created_at 
+kinochilar_api  | FROM movie ORDER BY movie.created_at DESC 
+kinochilar_api  |  LIMIT $1::INTEGER
+kinochilar_api  | 2026-06-07 11:56:28,371 INFO sqlalchemy.engine.Engine [generated in 0.00019s] (1,)
+kinochilar_api  | 2026-06-07 11:56:29,197 INFO sqlalchemy.engine.Engine INSERT INTO ailog (action_type, description, impact_score) VALUES ($1::VARCHAR, $2::VARCHAR, $3::INTEGER) RETURNING ailog.id, ailog.created_at
+kinochilar_api  | 2026-06-07 11:56:29,197 INFO sqlalchemy.engine.Engine [generated in 0.00021s] ('master_management', "AI butun tizimni nazorat qilmoqda. Bugungi marketing: Telegram kanallarda ko'proq kinosilkalarni ulashish tavsiya etiladi....", 200)
+kinochilar_api  | 2026-06-07 11:56:29,203 INFO sqlalchemy.engine.Engine SELECT aistat.id, aistat.date, aistat.users_acquired, aistat.descriptions_generated, aistat.marketing_suggestions 
+kinochilar_api  | FROM aistat 
+kinochilar_api  | WHERE date(aistat.date) = $1::DATE
+kinochilar_api  | 2026-06-07 11:56:29,203 INFO sqlalchemy.engine.Engine [generated in 0.00021s] (datetime.date(2026, 6, 7),)
+kinochilar_api  | 2026-06-07 11:56:29,205 INFO sqlalchemy.engine.Engine ROLLBACK
+kinochilar_api  | INFO:     172.21.0.1:43090 - "POST /api/v1/admin/ai/trigger-autonomous HTTP/1.1" 500 Internal Server Error
+kinochilar_api  | ERROR:    Exception in ASGI application
+kinochilar_api  | Traceback (most recent call last):
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/protocols/http/httptools_impl.py", line 421, in run_asgi
+kinochilar_api  |     result = await app(  # type: ignore[func-returns-value]
+kinochilar_api  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/middleware/proxy_headers.py", line 62, in __call__
+kinochilar_api  |     return await self.app(scope, receive, send)
+kinochilar_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/fastapi/applications.py", line 1159, in __call__
+kinochilar_api  |     await super().__call__(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/applications.py", line 90, in __call__
+kinochilar_api  |     await self.middleware_stack(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/middleware/errors.py", line 186, in __call__
+kinochilar_api  |     raise exc
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/middleware/errors.py", line 164, in __call__
+kinochilar_api  |     await self.app(scope, receive, _send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/middleware/cors.py", line 88, in __call__
+kinochilar_api  |     await self.app(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+kinochilar_api  |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+kinochilar_api  |     raise exc
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+kinochilar_api  |     await app(scope, receive, sender)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+kinochilar_api  |     await self.app(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/routing.py", line 660, in __call__
+kinochilar_api  |     await self.middleware_stack(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/routing.py", line 680, in app
+kinochilar_api  |     await route.handle(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/routing.py", line 276, in handle
+kinochilar_api  |     await self.app(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/fastapi/routing.py", line 134, in app
+kinochilar_api  |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+kinochilar_api  |     raise exc
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+kinochilar_api  |     await app(scope, receive, sender)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+kinochilar_api  |     response = await f(request)
+kinochilar_api  |                ^^^^^^^^^^^^^^^^
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/fastapi/routing.py", line 674, in app
+kinochilar_api  |     raw_response = await run_endpoint_function(
+kinochilar_api  |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/fastapi/routing.py", line 328, in run_endpoint_function
+kinochilar_api  |     return await dependant.call(**values)
+kinochilar_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+kinochilar_api  |   File "/app/app/api/admin.py", line 62, in trigger_ai_autonomous
+kinochilar_api  |     result = await management_ai.run_autonomous_growth(db)
+kinochilar_api  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+kinochilar_api  |   File "/app/app/services/management_ai.py", line 77, in run_autonomous_growth
+kinochilar_api  |     stat.users_acquired += random.randint(100, 300) # Significant growth from social media
+kinochilar_api  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+kinochilar_api  | TypeError: unsupported operand type(s) for +=: 'NoneType' and 'int'
+kinochilar_api  | 2026-06-07 11:56:29,215 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+kinochilar_api  | 2026-06-07 11:56:29,215 INFO sqlalchemy.engine.Engine SELECT "user".id, "user".full_name, "user".email, "user".hashed_password, "user".is_active, "user".is_superuser, "user".created_at, "user".updated_at 
+kinochilar_api  | FROM "user" 
+kinochilar_api  | WHERE "user".id = $1::INTEGER
+kinochilar_api  | 2026-06-07 11:56:29,215 INFO sqlalchemy.engine.Engine [cached since 1.443s ago] (1,)
+kinochilar_api  | 2026-06-07 11:56:29,219 INFO sqlalchemy.engine.Engine SELECT count("user".id) AS count_1 
+kinochilar_api  | FROM "user"
+kinochilar_api  | 2026-06-07 11:56:29,219 INFO sqlalchemy.engine.Engine [generated in 0.00022s] ()
+kinochilar_api  | 2026-06-07 11:56:29,222 INFO sqlalchemy.engine.Engine SELECT count("user".id) AS count_1 
+kinochilar_api  | FROM "user" 
+kinochilar_api  | WHERE "user".created_at >= $1::TIMESTAMP WITH TIME ZONE
+kinochilar_api  | 2026-06-07 11:56:29,222 INFO sqlalchemy.engine.Engine [generated in 0.00021s] (datetime.datetime(2026, 6, 6, 11, 56, 29, 221263),)
+kinochilar_api  | 2026-06-07 11:56:29,225 INFO sqlalchemy.engine.Engine SELECT aistat.id, aistat.date, aistat.users_acquired, aistat.descriptions_generated, aistat.marketing_suggestions 
+kinochilar_api  | FROM aistat 
+kinochilar_api  | WHERE date(aistat.date) = $1::DATE
+kinochilar_api  | 2026-06-07 11:56:29,225 INFO sqlalchemy.engine.Engine [cached since 0.0222s ago] (datetime.date(2026, 6, 7),)
+kinochilar_api  | 2026-06-07 11:56:29,227 INFO sqlalchemy.engine.Engine SELECT ailog.id, ailog.action_type, ailog.description, ailog.impact_score, ailog.created_at 
+kinochilar_api  | FROM ailog ORDER BY ailog.created_at DESC 
+kinochilar_api  |  LIMIT $1::INTEGER
+kinochilar_api  | 2026-06-07 11:56:29,227 INFO sqlalchemy.engine.Engine [generated in 0.00039s] (10,)
+kinochilar_api  | INFO:     172.21.0.1:43096 - "GET /api/v1/admin/stats/overview HTTP/1.1" 200 OK
+kinochilar_api  | 2026-06-07 11:56:29,233 INFO sqlalchemy.engine.Engine COMMIT
+kinochilar_api  | 2026-06-07 11:56:58,419 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+kinochilar_api  | 2026-06-07 11:56:58,420 INFO sqlalchemy.engine.Engine INSERT INTO visitlog (user_id, ip_address, user_agent, page_url) VALUES ($1::INTEGER, $2::VARCHAR, $3::VARCHAR, $4::VARCHAR) RETURNING visitlog.id, visitlog.created_at
+kinochilar_api  | 2026-06-07 11:56:58,420 INFO sqlalchemy.engine.Engine [cached since 30.7s ago] (None, '172.21.0.1', 'curl/8.19.0', 'http://localhost:8085/api/v1/discovery/home')
+kinochilar_api  | 2026-06-07 11:56:58,421 INFO sqlalchemy.engine.Engine COMMIT
+kinochilar_api  | 2026-06-07 11:56:58,423 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+kinochilar_api  | 2026-06-07 11:56:58,423 INFO sqlalchemy.engine.Engine SELECT movie.id, movie.code, movie.title_uz, movie.title_ru, movie.original_title, movie.description_uz, movie.description_ru, movie.release_date, movie.duration, movie.rating, movie.vote_count, movie.poster_path, movie.backdrop_path, movie.trailer_url, movie.video_url, movie.video_type, movie.is_premium, movie.is_series, movie.views, movie.created_at 
+kinochilar_api  | FROM movie ORDER BY movie.views DESC 
+kinochilar_api  |  LIMIT $1::INTEGER
+kinochilar_api  | 2026-06-07 11:56:58,424 INFO sqlalchemy.engine.Engine [cached since 30.69s ago] (10,)
+kinochilar_api  | 2026-06-07 11:56:58,425 INFO sqlalchemy.engine.Engine SELECT movie.id, movie.code, movie.title_uz, movie.title_ru, movie.original_title, movie.description_uz, movie.description_ru, movie.release_date, movie.duration, movie.rating, movie.vote_count, movie.poster_path, movie.backdrop_path, movie.trailer_url, movie.video_url, movie.video_type, movie.is_premium, movie.is_series, movie.views, movie.created_at 
+kinochilar_api  | FROM movie ORDER BY movie.rating DESC 
+kinochilar_api  |  LIMIT $1::INTEGER
+kinochilar_api  | 2026-06-07 11:56:58,426 INFO sqlalchemy.engine.Engine [cached since 30.68s ago] (10,)
+kinochilar_api  | 2026-06-07 11:56:58,426 INFO sqlalchemy.engine.Engine SELECT ad.id, ad.title_uz, ad.title_ru, ad.image_url, ad.link_url, ad.is_active, ad.target_movie_id, ad.views, ad.clicks, ad.created_at 
+kinochilar_api  | FROM ad 
+kinochilar_api  | WHERE ad.is_active = true 
+kinochilar_api  |  LIMIT $1::INTEGER
+kinochilar_api  | 2026-06-07 11:56:58,427 INFO sqlalchemy.engine.Engine [cached since 30.68s ago] (5,)
+kinochilar_api  | 2026-06-07 11:56:58,427 INFO sqlalchemy.engine.Engine SELECT genre.id, genre.name_uz, genre.name_ru 
+kinochilar_api  | FROM genre 
+kinochilar_api  |  LIMIT $1::INTEGER
+kinochilar_api  | 2026-06-07 11:56:58,427 INFO sqlalchemy.engine.Engine [cached since 30.68s ago] (20,)
+kinochilar_api  | 2026-06-07 11:56:58,428 INFO sqlalchemy.engine.Engine ROLLBACK
+kinochilar_api  | INFO:     172.21.0.1:39240 - "GET /api/v1/discovery/home HTTP/1.1" 500 Internal Server Error
+kinochilar_api  | ERROR:    Exception in ASGI application
+kinochilar_api  | Traceback (most recent call last):
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/protocols/http/httptools_impl.py", line 421, in run_asgi
+kinochilar_api  |     result = await app(  # type: ignore[func-returns-value]
+kinochilar_api  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/middleware/proxy_headers.py", line 62, in __call__
+kinochilar_api  |     return await self.app(scope, receive, send)
+kinochilar_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/fastapi/applications.py", line 1159, in __call__
+kinochilar_api  |     await super().__call__(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/applications.py", line 90, in __call__
+kinochilar_api  |     await self.middleware_stack(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/middleware/errors.py", line 186, in __call__
+kinochilar_api  |     raise exc
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/middleware/errors.py", line 164, in __call__
+kinochilar_api  |     await self.app(scope, receive, _send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/middleware/cors.py", line 88, in __call__
+kinochilar_api  |     await self.app(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+kinochilar_api  |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+kinochilar_api  |     raise exc
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+kinochilar_api  |     await app(scope, receive, sender)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+kinochilar_api  |     await self.app(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/routing.py", line 660, in __call__
+kinochilar_api  |     await self.middleware_stack(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/routing.py", line 680, in app
+kinochilar_api  |     await route.handle(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/routing.py", line 276, in handle
+kinochilar_api  |     await self.app(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/fastapi/routing.py", line 134, in app
+kinochilar_api  |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+kinochilar_api  |     raise exc
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+kinochilar_api  |     await app(scope, receive, sender)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+kinochilar_api  |     response = await f(request)
+kinochilar_api  |                ^^^^^^^^^^^^^^^^
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/fastapi/routing.py", line 695, in app
+kinochilar_api  |     content = await serialize_response(
+kinochilar_api  |               ^^^^^^^^^^^^^^^^^^^^^^^^^
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/fastapi/routing.py", line 306, in serialize_response
+kinochilar_api  |     return serializer(
+kinochilar_api  |            ^^^^^^^^^^^
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/fastapi/_compat/v2.py", line 231, in serialize_json
+kinochilar_api  |     return self._type_adapter.dump_json(
+kinochilar_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/pydantic/type_adapter.py", line 677, in dump_json
+kinochilar_api  |     return self.serializer.to_json(
+kinochilar_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^
+kinochilar_api  | pydantic_core._pydantic_core.PydanticSerializationError: Unable to serialize unknown type: <class 'app.models.movie.Genre'>
+kinochilar_api  | 2026-06-07 11:57:41,569 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+kinochilar_api  | 2026-06-07 11:57:41,569 INFO sqlalchemy.engine.Engine SELECT "user".id, "user".full_name, "user".email, "user".hashed_password, "user".is_active, "user".is_superuser, "user".created_at, "user".updated_at 
+kinochilar_api  | FROM "user" 
+kinochilar_api  | WHERE "user".email = $1::VARCHAR
+kinochilar_api  | 2026-06-07 11:57:41,569 INFO sqlalchemy.engine.Engine [cached since 73.87s ago] ('vosejonova@gmail.com',)
+kinochilar_api  | INFO:     172.21.0.1:42638 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+kinochilar_api  | 2026-06-07 11:57:41,577 INFO sqlalchemy.engine.Engine COMMIT
+kinochilar_api  | 2026-06-07 11:57:41,580 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+kinochilar_api  | 2026-06-07 11:57:41,581 INFO sqlalchemy.engine.Engine INSERT INTO visitlog (user_id, ip_address, user_agent, page_url) VALUES ($1::INTEGER, $2::VARCHAR, $3::VARCHAR, $4::VARCHAR) RETURNING visitlog.id, visitlog.created_at
+kinochilar_api  | 2026-06-07 11:57:41,581 INFO sqlalchemy.engine.Engine [cached since 73.86s ago] (None, '172.21.0.1', 'python-httpx/0.28.1', 'http://localhost:8085/api/v1/discovery/home')
+kinochilar_api  | 2026-06-07 11:57:41,582 INFO sqlalchemy.engine.Engine COMMIT
+kinochilar_api  | 2026-06-07 11:57:41,585 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+kinochilar_api  | 2026-06-07 11:57:41,586 INFO sqlalchemy.engine.Engine SELECT movie.id, movie.code, movie.title_uz, movie.title_ru, movie.original_title, movie.description_uz, movie.description_ru, movie.release_date, movie.duration, movie.rating, movie.vote_count, movie.poster_path, movie.backdrop_path, movie.trailer_url, movie.video_url, movie.video_type, movie.is_premium, movie.is_series, movie.views, movie.created_at 
+kinochilar_api  | FROM movie ORDER BY movie.views DESC 
+kinochilar_api  |  LIMIT $1::INTEGER
+kinochilar_api  | 2026-06-07 11:57:41,586 INFO sqlalchemy.engine.Engine [cached since 73.85s ago] (10,)
+kinochilar_api  | 2026-06-07 11:57:41,588 INFO sqlalchemy.engine.Engine SELECT movie.id, movie.code, movie.title_uz, movie.title_ru, movie.original_title, movie.description_uz, movie.description_ru, movie.release_date, movie.duration, movie.rating, movie.vote_count, movie.poster_path, movie.backdrop_path, movie.trailer_url, movie.video_url, movie.video_type, movie.is_premium, movie.is_series, movie.views, movie.created_at 
+kinochilar_api  | FROM movie ORDER BY movie.rating DESC 
+kinochilar_api  |  LIMIT $1::INTEGER
+kinochilar_api  | 2026-06-07 11:57:41,588 INFO sqlalchemy.engine.Engine [cached since 73.85s ago] (10,)
+kinochilar_api  | 2026-06-07 11:57:41,589 INFO sqlalchemy.engine.Engine SELECT ad.id, ad.title_uz, ad.title_ru, ad.image_url, ad.link_url, ad.is_active, ad.target_movie_id, ad.views, ad.clicks, ad.created_at 
+kinochilar_api  | FROM ad 
+kinochilar_api  | WHERE ad.is_active = true 
+kinochilar_api  |  LIMIT $1::INTEGER
+kinochilar_api  | 2026-06-07 11:57:41,589 INFO sqlalchemy.engine.Engine [cached since 73.84s ago] (5,)
+kinochilar_api  | 2026-06-07 11:57:41,591 INFO sqlalchemy.engine.Engine SELECT genre.id, genre.name_uz, genre.name_ru 
+kinochilar_api  | FROM genre 
+kinochilar_api  |  LIMIT $1::INTEGER
+kinochilar_api  | 2026-06-07 11:57:41,591 INFO sqlalchemy.engine.Engine [cached since 73.84s ago] (20,)
+kinochilar_api  | 2026-06-07 11:57:41,592 INFO sqlalchemy.engine.Engine ROLLBACK
+kinochilar_api  | INFO:     172.21.0.1:42638 - "GET /api/v1/discovery/home HTTP/1.1" 500 Internal Server Error
+kinochilar_api  | ERROR:    Exception in ASGI application
+kinochilar_api  | Traceback (most recent call last):
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/protocols/http/httptools_impl.py", line 421, in run_asgi
+kinochilar_api  |     result = await app(  # type: ignore[func-returns-value]
+kinochilar_api  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/middleware/proxy_headers.py", line 62, in __call__
+kinochilar_api  |     return await self.app(scope, receive, send)
+kinochilar_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/fastapi/applications.py", line 1159, in __call__
+kinochilar_api  |     await super().__call__(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/applications.py", line 90, in __call__
+kinochilar_api  |     await self.middleware_stack(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/middleware/errors.py", line 186, in __call__
+kinochilar_api  |     raise exc
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/middleware/errors.py", line 164, in __call__
+kinochilar_api  |     await self.app(scope, receive, _send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/middleware/cors.py", line 88, in __call__
+kinochilar_api  |     await self.app(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+kinochilar_api  |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+kinochilar_api  |     raise exc
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+kinochilar_api  |     await app(scope, receive, sender)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+kinochilar_api  |     await self.app(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/routing.py", line 660, in __call__
+kinochilar_api  |     await self.middleware_stack(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/routing.py", line 680, in app
+kinochilar_api  |     await route.handle(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/routing.py", line 276, in handle
+kinochilar_api  |     await self.app(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/fastapi/routing.py", line 134, in app
+kinochilar_api  |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+kinochilar_api  |     raise exc
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+kinochilar_api  |     await app(scope, receive, sender)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+kinochilar_api  |     response = await f(request)
+kinochilar_api  |                ^^^^^^^^^^^^^^^^
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/fastapi/routing.py", line 695, in app
+kinochilar_api  |     content = await serialize_response(
+kinochilar_api  |               ^^^^^^^^^^^^^^^^^^^^^^^^^
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/fastapi/routing.py", line 306, in serialize_response
+kinochilar_api  |     return serializer(
+kinochilar_api  |            ^^^^^^^^^^^
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/fastapi/_compat/v2.py", line 231, in serialize_json
+kinochilar_api  |     return self._type_adapter.dump_json(
+kinochilar_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/pydantic/type_adapter.py", line 677, in dump_json
+kinochilar_api  |     return self.serializer.to_json(
+kinochilar_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^
+kinochilar_api  | pydantic_core._pydantic_core.PydanticSerializationError: Unable to serialize unknown type: <class 'app.models.movie.Genre'>
+kinochilar_api  | 2026-06-07 11:57:41,602 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+kinochilar_api  | 2026-06-07 11:57:41,603 INFO sqlalchemy.engine.Engine SELECT "user".id, "user".full_name, "user".email, "user".hashed_password, "user".is_active, "user".is_superuser, "user".created_at, "user".updated_at 
+kinochilar_api  | FROM "user" 
+kinochilar_api  | WHERE "user".id = $1::INTEGER
+kinochilar_api  | 2026-06-07 11:57:41,603 INFO sqlalchemy.engine.Engine [cached since 73.83s ago] (1,)
+kinochilar_api  | 2026-06-07 11:57:41,606 INFO sqlalchemy.engine.Engine SELECT movie.id AS movie_id, movie.code AS movie_code, movie.title_uz AS movie_title_uz, movie.title_ru AS movie_title_ru, movie.original_title AS movie_original_title, movie.description_uz AS movie_description_uz, movie.description_ru AS movie_description_ru, movie.release_date AS movie_release_date, movie.duration AS movie_duration, movie.rating AS movie_rating, movie.vote_count AS movie_vote_count, movie.poster_path AS movie_poster_path, movie.backdrop_path AS movie_backdrop_path, movie.trailer_url AS movie_trailer_url, movie.video_url AS movie_video_url, movie.video_type AS movie_video_type, movie.is_premium AS movie_is_premium, movie.is_series AS movie_is_series, movie.views AS movie_views, movie.created_at AS movie_created_at 
+kinochilar_api  | FROM movie 
+kinochilar_api  | WHERE movie.id = $1::INTEGER
+kinochilar_api  | 2026-06-07 11:57:41,606 INFO sqlalchemy.engine.Engine [cached since 73.83s ago] (1,)
+kinochilar_api  | 2026-06-07 11:57:41,607 INFO sqlalchemy.engine.Engine ROLLBACK
+kinochilar_api  | INFO:     172.21.0.1:42642 - "POST /api/v1/comments/movie/1 HTTP/1.1" 404 Not Found
+kinochilar_api  | 2026-06-07 11:57:41,614 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+kinochilar_api  | 2026-06-07 11:57:41,614 INFO sqlalchemy.engine.Engine SELECT "user".id, "user".full_name, "user".email, "user".hashed_password, "user".is_active, "user".is_superuser, "user".created_at, "user".updated_at 
+kinochilar_api  | FROM "user" 
+kinochilar_api  | WHERE "user".id = $1::INTEGER
+kinochilar_api  | 2026-06-07 11:57:41,614 INFO sqlalchemy.engine.Engine [cached since 73.84s ago] (1,)
+kinochilar_api  | 2026-06-07 11:57:41,617 INFO sqlalchemy.engine.Engine SELECT movie.id AS movie_id, movie.code AS movie_code, movie.title_uz AS movie_title_uz, movie.title_ru AS movie_title_ru, movie.original_title AS movie_original_title, movie.description_uz AS movie_description_uz, movie.description_ru AS movie_description_ru, movie.release_date AS movie_release_date, movie.duration AS movie_duration, movie.rating AS movie_rating, movie.vote_count AS movie_vote_count, movie.poster_path AS movie_poster_path, movie.backdrop_path AS movie_backdrop_path, movie.trailer_url AS movie_trailer_url, movie.video_url AS movie_video_url, movie.video_type AS movie_video_type, movie.is_premium AS movie_is_premium, movie.is_series AS movie_is_series, movie.views AS movie_views, movie.created_at AS movie_created_at 
+kinochilar_api  | FROM movie 
+kinochilar_api  | WHERE movie.id = $1::INTEGER
+kinochilar_api  | 2026-06-07 11:57:41,617 INFO sqlalchemy.engine.Engine [cached since 73.84s ago] (1,)
+kinochilar_api  | 2026-06-07 11:57:41,619 INFO sqlalchemy.engine.Engine ROLLBACK
+kinochilar_api  | INFO:     172.21.0.1:42642 - "POST /api/v1/comments/movie/1 HTTP/1.1" 404 Not Found
+kinochilar_api  | 2026-06-07 11:57:41,623 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+kinochilar_api  | 2026-06-07 11:57:41,623 INFO sqlalchemy.engine.Engine SELECT "user".id, "user".full_name, "user".email, "user".hashed_password, "user".is_active, "user".is_superuser, "user".created_at, "user".updated_at 
+kinochilar_api  | FROM "user" 
+kinochilar_api  | WHERE "user".id = $1::INTEGER
+kinochilar_api  | 2026-06-07 11:57:41,623 INFO sqlalchemy.engine.Engine [cached since 73.85s ago] (1,)
+kinochilar_api  | Connection to TMDB failed: All connection attempts failed
+kinochilar_api  | 2026-06-07 11:57:41,701 INFO sqlalchemy.engine.Engine SELECT movie.id, movie.code, movie.title_uz, movie.title_ru, movie.original_title, movie.description_uz, movie.description_ru, movie.release_date, movie.duration, movie.rating, movie.vote_count, movie.poster_path, movie.backdrop_path, movie.trailer_url, movie.video_url, movie.video_type, movie.is_premium, movie.is_series, movie.views, movie.created_at 
+kinochilar_api  | FROM movie 
+kinochilar_api  | WHERE movie.description_uz IS NULL 
+kinochilar_api  |  LIMIT $1::INTEGER
+kinochilar_api  | 2026-06-07 11:57:41,701 INFO sqlalchemy.engine.Engine [cached since 73.33s ago] (5,)
+kinochilar_api  | 2026-06-07 11:57:41,703 INFO sqlalchemy.engine.Engine SELECT movie.id, movie.code, movie.title_uz, movie.title_ru, movie.original_title, movie.description_uz, movie.description_ru, movie.release_date, movie.duration, movie.rating, movie.vote_count, movie.poster_path, movie.backdrop_path, movie.trailer_url, movie.video_url, movie.video_type, movie.is_premium, movie.is_series, movie.views, movie.created_at 
+kinochilar_api  | FROM movie ORDER BY movie.created_at DESC 
+kinochilar_api  |  LIMIT $1::INTEGER
+kinochilar_api  | 2026-06-07 11:57:41,703 INFO sqlalchemy.engine.Engine [cached since 73.33s ago] (1,)
+kinochilar_api  | 2026-06-07 11:57:42,534 INFO sqlalchemy.engine.Engine INSERT INTO ailog (action_type, description, impact_score) VALUES ($1::VARCHAR, $2::VARCHAR, $3::INTEGER) RETURNING ailog.id, ailog.created_at
+kinochilar_api  | 2026-06-07 11:57:42,534 INFO sqlalchemy.engine.Engine [cached since 73.34s ago] ('master_management', "AI butun tizimni nazorat qilmoqda. Bugungi marketing: Telegram kanallarda ko'proq kinosilkalarni ulashish tavsiya etiladi....", 200)
+kinochilar_api  | 2026-06-07 11:57:42,536 INFO sqlalchemy.engine.Engine SELECT aistat.id, aistat.date, aistat.users_acquired, aistat.descriptions_generated, aistat.marketing_suggestions 
+kinochilar_api  | FROM aistat 
+kinochilar_api  | WHERE date(aistat.date) = $1::DATE
+kinochilar_api  | 2026-06-07 11:57:42,536 INFO sqlalchemy.engine.Engine [cached since 73.33s ago] (datetime.date(2026, 6, 7),)
+kinochilar_api  | 2026-06-07 11:57:42,537 INFO sqlalchemy.engine.Engine ROLLBACK
+kinochilar_api  | INFO:     172.21.0.1:42642 - "POST /api/v1/admin/ai/trigger-autonomous HTTP/1.1" 500 Internal Server Error
+kinochilar_api  | ERROR:    Exception in ASGI application
+kinochilar_api  | Traceback (most recent call last):
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/protocols/http/httptools_impl.py", line 421, in run_asgi
+kinochilar_api  |     result = await app(  # type: ignore[func-returns-value]
+kinochilar_api  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/middleware/proxy_headers.py", line 62, in __call__
+kinochilar_api  |     return await self.app(scope, receive, send)
+kinochilar_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/fastapi/applications.py", line 1159, in __call__
+kinochilar_api  |     await super().__call__(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/applications.py", line 90, in __call__
+kinochilar_api  |     await self.middleware_stack(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/middleware/errors.py", line 186, in __call__
+kinochilar_api  |     raise exc
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/middleware/errors.py", line 164, in __call__
+kinochilar_api  |     await self.app(scope, receive, _send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/middleware/cors.py", line 88, in __call__
+kinochilar_api  |     await self.app(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+kinochilar_api  |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+kinochilar_api  |     raise exc
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+kinochilar_api  |     await app(scope, receive, sender)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+kinochilar_api  |     await self.app(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/routing.py", line 660, in __call__
+kinochilar_api  |     await self.middleware_stack(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/routing.py", line 680, in app
+kinochilar_api  |     await route.handle(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/routing.py", line 276, in handle
+kinochilar_api  |     await self.app(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/fastapi/routing.py", line 134, in app
+kinochilar_api  |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+kinochilar_api  |     raise exc
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+kinochilar_api  |     await app(scope, receive, sender)
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+kinochilar_api  |     response = await f(request)
+kinochilar_api  |                ^^^^^^^^^^^^^^^^
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/fastapi/routing.py", line 674, in app
+kinochilar_api  |     raw_response = await run_endpoint_function(
+kinochilar_api  |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+kinochilar_api  |   File "/usr/local/lib/python3.11/site-packages/fastapi/routing.py", line 328, in run_endpoint_function
+kinochilar_api  |     return await dependant.call(**values)
+kinochilar_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+kinochilar_api  |   File "/app/app/api/admin.py", line 62, in trigger_ai_autonomous
+kinochilar_api  |     result = await management_ai.run_autonomous_growth(db)
+kinochilar_api  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+kinochilar_api  |   File "/app/app/services/management_ai.py", line 77, in run_autonomous_growth
+kinochilar_api  |     stat.users_acquired += random.randint(100, 300) # Significant growth from social media
+kinochilar_api  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+kinochilar_api  | TypeError: unsupported operand type(s) for +=: 'NoneType' and 'int'
+kinochilar_api  | 2026-06-07 11:57:42,546 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+kinochilar_api  | 2026-06-07 11:57:42,546 INFO sqlalchemy.engine.Engine SELECT "user".id, "user".full_name, "user".email, "user".hashed_password, "user".is_active, "user".is_superuser, "user".created_at, "user".updated_at 
+kinochilar_api  | FROM "user" 
+kinochilar_api  | WHERE "user".id = $1::INTEGER
+kinochilar_api  | 2026-06-07 11:57:42,546 INFO sqlalchemy.engine.Engine [cached since 74.77s ago] (1,)
+kinochilar_api  | 2026-06-07 11:57:42,548 INFO sqlalchemy.engine.Engine SELECT count("user".id) AS count_1 
+kinochilar_api  | FROM "user"
+kinochilar_api  | 2026-06-07 11:57:42,548 INFO sqlalchemy.engine.Engine [cached since 73.33s ago] ()
+kinochilar_api  | 2026-06-07 11:57:42,549 INFO sqlalchemy.engine.Engine SELECT count("user".id) AS count_1 
+kinochilar_api  | FROM "user" 
+kinochilar_api  | WHERE "user".created_at >= $1::TIMESTAMP WITH TIME ZONE
+kinochilar_api  | 2026-06-07 11:57:42,550 INFO sqlalchemy.engine.Engine [cached since 73.33s ago] (datetime.datetime(2026, 6, 6, 11, 57, 42, 549487),)
+kinochilar_api  | 2026-06-07 11:57:42,551 INFO sqlalchemy.engine.Engine SELECT aistat.id, aistat.date, aistat.users_acquired, aistat.descriptions_generated, aistat.marketing_suggestions 
+kinochilar_api  | FROM aistat 
+kinochilar_api  | WHERE date(aistat.date) = $1::DATE
+kinochilar_api  | 2026-06-07 11:57:42,551 INFO sqlalchemy.engine.Engine [cached since 73.35s ago] (datetime.date(2026, 6, 7),)
+kinochilar_api  | 2026-06-07 11:57:42,552 INFO sqlalchemy.engine.Engine SELECT ailog.id, ailog.action_type, ailog.description, ailog.impact_score, ailog.created_at 
+kinochilar_api  | FROM ailog ORDER BY ailog.created_at DESC 
+kinochilar_api  |  LIMIT $1::INTEGER
+kinochilar_api  | 2026-06-07 11:57:42,552 INFO sqlalchemy.engine.Engine [cached since 73.33s ago] (10,)
+kinochilar_api  | INFO:     172.21.0.1:54630 - "GET /api/v1/admin/stats/overview HTTP/1.1" 200 OK
+kinochilar_api  | 2026-06-07 11:57:42,554 INFO sqlalchemy.engine.Engine COMMIT
