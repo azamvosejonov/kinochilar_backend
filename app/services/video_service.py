@@ -16,9 +16,11 @@ class VideoDownloadService:
     """AI-powered video download service that finds and downloads movie videos."""
     
     def __init__(self):
-        # Use local directory instead of /data
-        base_dir = Path(__file__).parent.parent.parent
-        self.download_dir = base_dir / "data" / "movies"
+        # Vercel da /tmp/, lokalda project/data/movies/
+        if os.getenv("VERCEL"):
+            self.download_dir = Path("/tmp/kinochilar/movies")
+        else:
+            self.download_dir = Path(__file__).parent.parent.parent / "data" / "movies"
         self.download_dir.mkdir(parents=True, exist_ok=True)
     
     async def search_video_sources(self, movie_title: str, movie_year: Optional[int] = None) -> list[Dict[str, Any]]:

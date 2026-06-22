@@ -41,8 +41,10 @@ async def stream_movie(
         # For remote URLs, redirect to the video
         return RedirectResponse(url=movie.video_url)
     
-    # For local files
-    video_path = f"/data/movies/{movie.video_url}"
+    # For local files — /tmp on Vercel, /data on dev
+    import os as _os
+    _base = "/tmp/kinochilar/movies" if _os.getenv("VERCEL") else "/data/movies"
+    video_path = f"{_base}/{movie.video_url}"
     
     if not os.path.exists(video_path):
          raise HTTPException(status_code=404, detail="File not found on server")

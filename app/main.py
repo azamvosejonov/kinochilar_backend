@@ -1,4 +1,6 @@
+import os
 from contextlib import asynccontextmanager
+from pathlib import Path
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
@@ -11,22 +13,26 @@ from app.db.session import engine
 
 from app.api import auth, movies, stream, discovery, users, comments, admin, user_content
 
+# Upload directory — /tmp on Vercel, local path on dev
+IS_VERCEL = bool(os.getenv("VERCEL"))
+if IS_VERCEL:
+    UPLOAD_DIR = Path("/tmp/kinochilar/uploads")
+else:
+    UPLOAD_DIR = Path(__file__).parent.parent / "uploads"
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     # Startup: create tables
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
-    
+
     # Create upload directories
-    from pathlib import Path
-    upload_dir = Path("/home/azam/Desktop/yaratish/kinochilar/uploads")
-    upload_dir.mkdir(exist_ok=True)
-    (upload_dir / "videos").mkdir(exist_ok=True)
-    (upload_dir / "posters").mkdir(exist_ok=True)
-    (upload_dir / "backdrops").mkdir(exist_ok=True)
-    
+    UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
+    (UPLOAD_DIR / "videos").mkdir(exist_ok=True)
+    (UPLOAD_DIR / "posters").mkdir(exist_ok=True)
+    (UPLOAD_DIR / "backdrops").mkdir(exist_ok=True)
+
     yield
-    # Shutdown: (nothing needed)
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
@@ -63,4 +69,7 @@ app.include_router(admin.router, prefix=f"{settings.API_V1_STR}/admin", tags=["a
 app.include_router(user_content.router, prefix=f"{settings.API_V1_STR}/user", tags=["user-content"])
 
 # Mount static files for uploads
-app.mount("/uploads", StaticFiles(directory="/home/azam/Desktop/yaratish/kinochilar/uploads"), name="uploads")
+try:
+    app.mount("/uploads", StaticFiles(directory=str(UPLOAD_DIR)), name="uploads")
+except RuntimeError:
+    pass  # Already mounted or path doesn't exist yet

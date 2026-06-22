@@ -16,9 +16,13 @@ from app.services.content_enrichment import ContentEnrichmentService
 router = APIRouter()
 content_enrichment_service = ContentEnrichmentService()
 
-# Upload directories
-UPLOAD_DIR = Path("/home/azam/Desktop/yaratish/kinochilar/uploads")
-UPLOAD_DIR.mkdir(exist_ok=True)
+# Upload directories — /tmp on Vercel, local path on dev
+import os as _os
+if _os.getenv("VERCEL"):
+    UPLOAD_DIR = Path("/tmp/kinochilar/uploads")
+else:
+    UPLOAD_DIR = Path(__file__).parent.parent.parent / "uploads"
+UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
 VIDEO_DIR = UPLOAD_DIR / "videos"
 POSTER_DIR = UPLOAD_DIR / "posters"
 BACKDROP_DIR = UPLOAD_DIR / "backdrops"
