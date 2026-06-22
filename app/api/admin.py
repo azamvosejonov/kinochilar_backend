@@ -17,7 +17,7 @@ from app.models.interactions import Review, Notification, Ad, VisitLog
 from app.models.ai_growth import AILog, AIStat
 from app.schemas.movie import (
     Movie as MovieSchema, MovieCreate, MovieUpdate, 
-    GenreCreate, TagCreate, EpisodeCreate, Episode as EpisodeSchema
+    Genre as GenreSchema, GenreCreate, TagCreate, EpisodeCreate, Episode as EpisodeSchema
 )
 from app.schemas.user import User as UserSchema
 from app.schemas.ad import Ad as AdSchema, AdCreate, AdUpdate
