@@ -92,8 +92,13 @@ async def trigger_ai_autonomous(
     return result
 
 # --- OTHER CRUD ENDPOINTS ---
-# [Keeping existing endpoints for Ads, Episodes, Content, etc. from earlier turns]
-# (Note: I am consolidating but providing full implementation for crucial parts)
+@router.post("/genres", response_model=GenreSchema)
+async def create_genre(genre_in: GenreCreate, db: AsyncSession = Depends(get_db), current_admin = Depends(deps.get_current_active_superuser)):
+    genre = Genre(**genre_in.model_dump())
+    db.add(genre)
+    await db.commit()
+    await db.refresh(genre)
+    return genre
 
 @router.post("/episodes", response_model=EpisodeSchema)
 async def create_episode(ep_in: EpisodeCreate, db: AsyncSession = Depends(get_db), current_admin = Depends(deps.get_current_active_superuser)):
