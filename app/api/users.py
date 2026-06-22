@@ -49,6 +49,6 @@ async def get_my_favorites(
     db: AsyncSession = Depends(get_db),
     current_user: User = Depends(deps.get_current_active_user)
 ):
-    stmt = select(Movie).join(Favorite).where(Favorite.user_id == current_user.id).options(selectinload(Movie.genres))
+    stmt = select(Movie).join(Favorite).where(Favorite.user_id == current_user.id).options(selectinload(Movie.genres), selectinload(Movie.tags))
     result = await db.execute(stmt)
     return result.scalars().all()

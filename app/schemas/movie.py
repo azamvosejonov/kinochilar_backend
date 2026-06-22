@@ -59,6 +59,7 @@ class MovieBase(BaseModel):
     video_type: str = "mp4"
     is_premium: int = 0
     is_series: bool = False
+    is_approved: bool = False
 
 class MovieCreate(MovieBase):
     genre_ids: List[int] = []
@@ -74,8 +75,5 @@ class Movie(MovieBase):
     vote_count: int
     views: int
     created_at: datetime
-    genres: List[Genre] = []
-    tags: List[Tag] = []
-    episodes: List[Episode] = []
 
     model_config = ConfigDict(from_attributes=True)

@@ -18,9 +18,13 @@ class Settings(BaseSettings):
     TELEGRAM_BOT_TOKEN: Optional[str] = "7449553755:AAH6-xY-8XmS0z6e2iE1Uj-h9fXGf9q7Ivk"
     TELEGRAM_CHANNELS: str = "@kinochi_la,@azam_televideniyesi" # List of channels to promote to
 
-
+    # Database
+    DATABASE_URL: str = "sqlite+aiosqlite:///./kinochilar.db"
     
-    DATABASE_URL: str = "postgresql+asyncpg://postgres:password@localhost/kinochilar"
+    # Docker Environment variables (for docker-compose compatibility)
+    POSTGRES_USER: Optional[str] = "postgres"
+    POSTGRES_PASSWORD: Optional[str] = "password"
+    POSTGRES_DB: Optional[str] = "kinochilar"
     
     REDIS_URL: Optional[str] = "redis://localhost:6379/0"
     

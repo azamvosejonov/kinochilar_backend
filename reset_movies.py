@@ -1,19 +1,28 @@
 import asyncio
 from app.db.session import AsyncSessionLocal
-from app.models.movie import Movie, Genre
-from app.db import base # Ensures all models are registered
-from sqlalchemy import select
+from app.models.movie import Movie
+from app.models.user import User
+from app.models.interactions import Review, Favorite
+from app.db import base  # Ensures all models are registered
+from sqlalchemy import select, delete
 
-async def main():
+async def clear_movies():
+    async with AsyncSessionLocal() as db:
+        # Delete in correct order to avoid foreign key violations
+        await db.execute(delete(Favorite))
+        await db.execute(delete(Review))
+        await db.execute(delete(Movie))
+        await db.commit()
+    print("Barcha kinolar o'chirildi!")
+
+async def add_movies():
+    from app.db.session import AsyncSessionLocal
+    from app.models.movie import Movie
+    from sqlalchemy import select
+    
     async with AsyncSessionLocal() as db:
         print("Dummy kinolar qo'shilmoqda...")
         
-        # Check if any movies exist
-        res = await db.execute(select(Movie).limit(1))
-        if res.scalars().first():
-            print("Kinolar allaqachon mavjud.")
-            return
-
         # Add 3 dummy movies with video URLs
         movies = [
             Movie(
@@ -63,6 +72,10 @@ async def main():
         db.add_all(movies)
         await db.commit()
         print("Bajarildi! 3 ta dummy kino qo'shildi.")
+
+async def main():
+    await clear_movies()
+    await add_movies()
 
 if __name__ == "__main__":
     asyncio.run(main())

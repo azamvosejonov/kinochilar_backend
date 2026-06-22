@@ -76,6 +76,7 @@ class Movie(Base):
     
     is_premium: Mapped[int] = mapped_column(Integer, default=0)
     is_series: Mapped[bool] = mapped_column(Boolean, default=False) # True if this is a series
+    is_approved: Mapped[bool] = mapped_column(Boolean, default=False) # True if admin approved
     views: Mapped[int] = mapped_column(Integer, default=0)
     
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())

@@ -9,7 +9,7 @@ from app.models.movie import Movie, Genre
 from app.models.interactions import Ad, VisitLog
 from app.schemas.movie import Movie as MovieSchema, Genre as GenreSchema
 from app.schemas.ad import Ad as AdSchema
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 
 router = APIRouter()
 
@@ -18,9 +18,8 @@ class HomeResponse(BaseModel):
     top_rated: List[MovieSchema]
     ads: List[AdSchema]
     genres: List[GenreSchema]
-    
-    class Config:
-        from_attributes = True
+
+    model_config = ConfigDict(from_attributes=True)
 
 @router.get("/home", response_model=HomeResponse)
 async def get_home_discovery(db: AsyncSession = Depends(get_db)):
@@ -28,19 +27,11 @@ async def get_home_discovery(db: AsyncSession = Depends(get_db)):
     Returns data for the home page: Trending, Top Rated, Categories, and ADS.
     """
     # 1. Trending
-    trending_stmt = select(Movie).options(
-        selectinload(Movie.genres),
-        selectinload(Movie.tags),
-        selectinload(Movie.episodes)
-    ).order_by(Movie.views.desc()).limit(10)
+    trending_stmt = select(Movie).options(selectinload(Movie.genres), selectinload(Movie.tags)).order_by(Movie.views.desc()).limit(10)
     trending = (await db.execute(trending_stmt)).scalars().all()
-    
+
     # 2. Top Rated
-    top_rated_stmt = select(Movie).options(
-        selectinload(Movie.genres),
-        selectinload(Movie.tags),
-        selectinload(Movie.episodes)
-    ).order_by(Movie.rating.desc()).limit(10)
+    top_rated_stmt = select(Movie).options(selectinload(Movie.genres), selectinload(Movie.tags)).order_by(Movie.rating.desc()).limit(10)
     top_rated = (await db.execute(top_rated_stmt)).scalars().all()
     
     # 3. Ads

@@ -1,8 +1,9 @@
 import os
 from fastapi import APIRouter, Depends, HTTPException, Request, Response
-from fastapi.responses import StreamingResponse
+from fastapi.responses import StreamingResponse, RedirectResponse
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
+import httpx
 
 from app.db.session import get_db
 from app.models.movie import Movie
@@ -29,16 +30,21 @@ async def stream_movie(
     result = await db.execute(stmt)
     movie = result.scalars().first()
     
-    if not movie or not movie.video_url:
-        raise HTTPException(status_code=404, detail="Video not found")
+    if not movie:
+        raise HTTPException(status_code=404, detail="Movie not found")
     
-    # Check if local file or remote
-    # For a "perfect" system, we assume storage is configured. 
-    # Here's how it works for a local file (e.g. in /data/movies/)
+    if not movie.video_url:
+        raise HTTPException(status_code=404, detail="Video not found for this movie")
+    
+    # Check if remote URL or local file
+    if movie.video_url.startswith("http://") or movie.video_url.startswith("https://"):
+        # For remote URLs, redirect to the video
+        return RedirectResponse(url=movie.video_url)
+    
+    # For local files
     video_path = f"/data/movies/{movie.video_url}"
     
     if not os.path.exists(video_path):
-         # If remote, we'd redirect or proxy. For now, let's show the range logic.
          raise HTTPException(status_code=404, detail="File not found on server")
 
     file_size = os.stat(video_path).st_size
